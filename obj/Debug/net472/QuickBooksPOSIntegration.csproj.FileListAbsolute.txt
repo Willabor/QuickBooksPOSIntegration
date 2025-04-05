@@ -1,0 +1,5 @@
+C:\Projects\QuickBooksPOSIntegration\obj\Debug\net472\QuickBooksPOSIntegration.csproj.AssemblyReference.cache
+C:\Projects\QuickBooksPOSIntegration\obj\Debug\net472\QuickBooksPOSIntegration.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\QuickBooksPOSIntegration\obj\Debug\net472\QuickBooksPOSIntegration.AssemblyInfoInputs.cache
+C:\Projects\QuickBooksPOSIntegration\obj\Debug\net472\QuickBooksPOSIntegration.AssemblyInfo.cs
+C:\Projects\QuickBooksPOSIntegration\obj\Debug\net472\QuickBooksPOSIntegration.csproj.CoreCompileInputs.cache
