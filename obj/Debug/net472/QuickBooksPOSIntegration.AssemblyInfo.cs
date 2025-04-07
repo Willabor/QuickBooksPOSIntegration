@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuickBooksPOSIntegration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bdf233376d64a741b5937b53c59a7bdd06afbd1a")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuickBooksPOSIntegration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuickBooksPOSIntegration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,28 +1,54 @@
 using System;
-using QBPOSFC4Lib; // Ensure this matches the actual namespace in your environment
+using Interop.QBPOSFC4.Full;
 
 namespace QuickBooksPOSIntegration
 {
+    public enum ENUM_QBPOS_SESSION_MODE
+    {
+        QBPOS_SM_READ_ONLY = 0,
+        QBPOS_SM_READ_WRITE = 1
+    }
+
     public class QuickBooksPOSService
     {
         private QBPOSSessionManager _sessionManager;
 
         public QuickBooksPOSService()
         {
-            _sessionManager = new QBPOSSessionManager();
+            // Instantiate the COM class that implements the QBPOSSessionManager interface
+            _sessionManager = new QBPOSSessionManagerClass();
         }
 
         public void OpenConnection(string appName)
         {
-            _sessionManager.OpenConnection("", appName);
-            // Adjust the session mode as needed (e.g., READ_WRITE if you plan to modify data)
-            _sessionManager.BeginSession("", ENUM_QBPOS_SESSION_MODE.QBPOS_SM_READ_ONLY);
+            try
+            {
+                // Open the connection to QuickBooks POS
+                _sessionManager.OpenConnection("", appName);
+
+                // Begin the session (default mode is read-only)
+                _sessionManager.BeginSession(""); // Removed the second argument
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error opening connection: {ex.Message}");
+                throw;
+            }
         }
 
         public void CloseConnection()
         {
-            _sessionManager.EndSession();
-            _sessionManager.CloseConnection();
+            try
+            {
+                // End the session and close the connection
+                _sessionManager.EndSession();
+                _sessionManager.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error closing connection: {ex.Message}");
+                throw;
+            }
         }
 
         public void FetchCustomers()
@@ -32,7 +58,7 @@ namespace QuickBooksPOSIntegration
             // 1. Create the request message set
             // Note: The version numbers here (majorVersion=3, minorVersion=0) are just examples.
             //       Adjust them to match the QBPOS XML spec versions supported by your QBPOS installation.
-            IMsgSetRequest requestMsgSet = _sessionManager.CreateMsgSetRequest("3.0");
+            IMsgSetRequest requestMsgSet = _sessionManager.CreateMsgSetRequest(3, 0);
 
             // Tell QB what to do if an error occurs: continue, stop, or return as-is.
             requestMsgSet.Attributes.OnError = ENRqOnError.roeContinue;
@@ -77,9 +103,8 @@ namespace QuickBooksPOSIntegration
                                 string lastName   = customerRet.LastName?.GetValue() ?? string.Empty;
                                 string fullName   = $"{firstName} {lastName}".Trim();
                                 string phone      = customerRet.Phone?.GetValue() ?? string.Empty;
-                                string email      = customerRet.Email?.GetValue() ?? string.Empty;
-
-                                Console.WriteLine($"Customer: {fullName}, Phone: {phone}, Email: {email}, ListID: {listID}");
+                                // Email property is not available in ICustomerRet; removing email-related code
+                                Console.WriteLine($"Customer: {fullName}, Phone: {phone}, ListID: {listID}");
                                 // You could store these in a list, database, etc.
                             }
                         }

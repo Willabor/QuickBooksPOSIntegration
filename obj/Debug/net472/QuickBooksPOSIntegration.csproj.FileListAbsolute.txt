@@ -3,3 +3,10 @@ C:\Projects\QuickBooksPOSIntegration\obj\Debug\net472\QuickBooksPOSIntegration.G
 C:\Projects\QuickBooksPOSIntegration\obj\Debug\net472\QuickBooksPOSIntegration.AssemblyInfoInputs.cache
 C:\Projects\QuickBooksPOSIntegration\obj\Debug\net472\QuickBooksPOSIntegration.AssemblyInfo.cs
 C:\Projects\QuickBooksPOSIntegration\obj\Debug\net472\QuickBooksPOSIntegration.csproj.CoreCompileInputs.cache
+C:\Projects\QuickBooksPOSIntegration\obj\Debug\net472\QuickBooksPOSIntegration.sourcelink.json
+C:\Projects\QuickBooksPOSIntegration\bin\Debug\net472\QuickBooksPOSIntegration.pdb
+C:\Projects\QuickBooksPOSIntegration\bin\Debug\net472\Interop.QBPOSFC4.Full.dll
+C:\Projects\QuickBooksPOSIntegration\obj\Debug\net472\QuickBoo.B082AE2D.Up2Date
+C:\Projects\QuickBooksPOSIntegration\obj\Debug\net472\QuickBooksPOSIntegration.pdb
+C:\Projects\QuickBooksPOSIntegration\bin\Debug\net472\QuickBooksPOSIntegration.dll
+C:\Projects\QuickBooksPOSIntegration\obj\Debug\net472\QuickBooksPOSIntegration.dll
